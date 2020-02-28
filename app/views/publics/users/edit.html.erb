@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"  style="margin:50px 250px; ">
+      <h1>会員情報編集ページ</h1>
+        <%= form_for @user, url:publics_user_path, method: :patch do |f| %>
+          <% if @user.errors.any? %>
+            <% @user.errors.full_messages.each do |m| %>
+              <%= m %>
+              <% end %>
+            <% end %>
+            <div class="field">
+              <%= f.label :nickname %><br />
+              <%= f.text_field :nickname, required: true, class: "form-control" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= f.attachment_field :profile_image %>
+            </div>
+
+
+            <div class="actions">
+              <%= f.submit "会員情報を編集する" %>
+            </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>
+
+ <div class="text-right"><%= link_to"退会", publics_path %></div>

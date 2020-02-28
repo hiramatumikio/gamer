@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*@import "articles.scss"*/
+
+
+
+
+
+
+
+body {
+  margin-top: 80px;
+  background-image: url("161112215258DSCF7367_TP_V.jpg");
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    background-size: cover;
+  .container {
+    background-color: #FFFFEF;
+    padding: 60px 10px;
+    min-height: 10vh;
+    min-width: 90%;
+}
+}
+
+footer {
+	color: white;
+	font-weight: bold;
+	width:100%;
+	bottom: 0;
+	margin-bottom: 0;
+}
+
+.nav-item{
+	margin-right: 80px;
+}
+
+.publics {
+  background-image: image-url('user_bg.JPG');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  .container {
+    background-color: #FFFFEF;
+    padding: 60px 10px;
+    min-height: 100vh;
+    min-width: 90%;
+}}
+
+.articles {
+	background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  .container {
+    background-color: #FFFFEF;
+    padding: 60px 10px;
+    min-height: 100vh;
+    min-width: 90%;
+}
+}
+
+.size_test {
+	font-size: 40px;
+}
+
+.size_test2 {
+	font-size: 30px;
+}
+
+
+
+
+
+
+@media screen and (min-width:992px){
+  .modal-dialog {
+    margin-top: 160px;
+    min-width: 50%;
+  }
+}
+
+@media screen and (min-width:992px){
+
+
+}

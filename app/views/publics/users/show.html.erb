@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" style="margin-top: 30px">
+      <% if flash[:notice] %>
+      <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1>マイページ</h1>
+        </div>
+        <div class="panel-body text-center">
+          <%= attachment_image_tag @user, :profile_image, :fill, 1000, 1000, size: '200x200', fallback: "esports0I9A7507_TP_V", class: "img-circle" %>
+            <div style="padding: 10px 20px;">
+              <h3><%= @user.nickname%>  様</h3>
+            </div>
+            <div style="padding: 10px 0px;">
+              <%= link_to"ユーザー詳細変更", edit_publics_user_path(@user.id), class: 'btn-lg btn-default btn-block btn' %>
+            </div>
+            <div style="padding: 10px 0px;">
+              <%= link_to"気になるリスト", publics_interests_path, class: 'btn-default btn-lg btn-block btn' %>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

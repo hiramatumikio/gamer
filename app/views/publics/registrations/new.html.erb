@@ -3,6 +3,10 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+
+  <h3 class="mt-4"><span class="text-warning">■</span>ニックネーム<span class="h5 text-secondary mt-4">※8文字以内</span></h3>
+        <%= f.text_field :nickname, required: true, class: "form-control-lg w-100 mt-2 text-center" %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

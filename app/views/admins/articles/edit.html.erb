@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="col-xs-3">
+    <%= render 'admins/users/sidebar' %>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+    <h1>記事編集ページ</h1>
+
+    <%= form_for @article, url:admins_article_path, method: :patch do |f| %>
+
+      <h3>画像選択</h3>
+        <%= f.attachment_field :image %>
+
+      <h3>記事タイトル</h3>
+        <%= f.text_field :title %>
+
+      <h3>特徴</h3>
+        <%= f.text_area :description, cols: 50, rows: 10 %>
+
+      <h5><%= f.submit "Update", class:"btn btn-warning" %></h5>
+      <h5><%= link_to "削除", admins_article_path, method: :delete, data: {confirm: '本当に削除してもいいですか？'} %></h5>
+
+    <% end %>
+    </div>
+  </div>
+</div>

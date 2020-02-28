@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="col-xs-3">
+    <%= render 'admins/users/sidebar' %>
+  </div>
+    <div class="row">
+       <div class="col-md-6"  style="margin:50px 250px; ">
+          <h1>会員情報編集</h1>
+            <%= form_for @user, url:admins_user_path, method: :patch do |f| %>
+                <% if @user.errors.any? %>
+                    <% @user.errors.full_messages.each do |m| %>
+                         <%= m %>
+                    <% end %>
+                <% end %>
+
+                <div class="field">
+                    <%= f.label :nickname %><br />
+                    <%= f.text_field :nickname, class: 'form-control' %>
+                </div>
+
+                <div class="field">
+                    <%= f.attachment_field :profile_image %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :email %><br />
+                    <%= f.email_field :email, class: 'form-control' %>
+                </div>
+
+                <div class="actions">
+                    <%= f.submit "会員情報を編集する" %>
+                </div>
+            <% end %>
+                <div class="text-right">
+                    <%= link_to "戻る", admins_users_path %>
+                </div>
+
+                <div class="text-right"><%= link_to"退会", admins_user_path %></div>
+        </div>
+    </div>
+</div>

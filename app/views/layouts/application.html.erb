@@ -5,11 +5,60 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   </head>
 
+    <header>
+      <nav class="navbar navbar-fixed-top" style="background-color: #f2f2f2;　width:100%">
+        <div class="navbar-header navbar-left">
+          <%= link_to image_tag("helmet-and-barbarian-knight", class: "image", height: "80", ), root_path %>
+        </div>
+    <ul class="nav navbar-nav navbar-right">
+      <% if public_signed_in? %>
+        <li class="nav-item">
+          <%= link_to publics_user_path(current_public.id), class: "btn-warning btn" do %>
+          <i class="glyphicon glyphicon-user text-danger" style="font-weight: bold; font-size: 20px;">マイページ</i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+            <%= link_to destroy_public_session_path, class: "btn-info btn", method: :delete do %>
+            <i class="glyphicon glyphicon-edit text-primary"  style="font-weight: bold; font-size: 20px;">ログアウト</i>
+            <% end %>
+          </li>
+      <% elsif admin_signed_in? %>
+        <P></P>
+      <% else %>
+        <li class="nav-item">
+            <%= link_to new_public_registration_path, class: "btn-warning btn" do %>
+            <i class="glyphicon glyphicon-edit text-danger"  style="font-weight: bold; font-size: 20px;">会員登録</i>
+            <% end %>
+        </li>
+          <li class="nav-item">
+            <%= link_to new_public_session_path,  class: "btn-info btn" do %>
+            <i class="glyphicon glyphicon-log-in text-primary"  style="font-weight: bold; font-size: 20px;">ログイン</i>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+  </nav>
+    </header>
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="top-message col-xs-3 col-xs-offset-11">CopyRight Infratop.Inc
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>

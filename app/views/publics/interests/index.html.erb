@@ -1,0 +1,36 @@
+<div class="container">
+  <p class="pull-right">表示数1~10件</p>
+  <div class="row">
+    <div class="col-md-10" style="margin-top: 30px">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1>気になるリスト</h1>
+        </div>
+        <% if @user.interests.count == 0 %>
+          <div class="text-center"><h3>気になるリストは空です</div>
+          <% else %>
+          <% @user.interests.each do |interest| %>
+            <div class="one-box">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="col-md-3">
+                  <%= attachment_image_tag interest.article, :image, :fill, 1000, 1000, format: 'jpeg', size: '200x200' %>
+                  </div>
+                  <div class="size_test2">
+                  <div>タイトル　<%= interest.article.title %></div>
+                </div>
+                  <div class="col-lg-1">
+                    <%= link_to "削除", publics_interest_path(interest), method: :delete, class:"btn btn-danger" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="pagiWrapper">
+      <%= paginate @interests %>
+  </div>
+</div>

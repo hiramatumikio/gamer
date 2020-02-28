@@ -1,0 +1,14 @@
+
+<div class="admins-sidebar">
+  <%= link_to"記事管理一覧", admins_articles_path %>
+</div>
+
+<div class="admins-sidebar">
+  <%= link_to"ユーザー管理一覧", admins_users_path %>
+</div>
+
+<div class="admin-sidebar">
+	<%= link_to destroy_admin_session_path, method: :delete do %>
+	<span>ログアウト</span>
+<% end %>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-xs-3">
+    <%= render 'admins/users/sidebar' %>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <% if @article.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <ul>
+            <% @article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <h1>新規記事作成</h1>
+      <%= form_for(@article, url:admins_articles_path) do |f|%>
+      <ul>
+        <li>ファイル複数選択
+          <%= f.attachment_field :image %></li>
+      </ul>
+
+      <h4>タイトル</h4>
+      <%= f.text_field :title %>
+
+      <h4>説明</h4>
+      <%= f.text_area :description, cols: 30, rows: 8 %>
+
+      <%= f.submit '新規記事作成' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
