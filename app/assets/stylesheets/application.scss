@@ -83,11 +83,79 @@ footer {
 	font-size: 40px;
 }
 
-.size_test2 {
+.size_test2 { /*タイトル 特徴*/
 	font-size: 30px;
 }
 
 
+
+
+.flex { /*記事一覧*/
+
+    height: 50vh;
+    padding: 10px;
+    display: flex;
+     flex-direction: row;
+      align-content: space-between;
+
+}
+
+.flex > div { /*記事一覧*/
+    background-color: #fff;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.flex10 { /*記事一覧*/
+
+    height: 50vh;
+    padding: 10px;
+    display: flex;
+     flex-direction: row;
+      align-content: space-between;
+
+}
+
+.flex10 > div { /*記事一覧*/
+    margin: 5px;
+    font-size: 15px;
+}
+
+.wrapper{
+	flex-flow: column wrap;
+
+}
+
+.flex5 {
+
+    height: 50vh;
+    padding: 10px;
+     flex-direction: row;
+     justify-content: flex-end
+}
+
+.flex > div {
+    background-color: #fff;
+    margin: 5px;
+    font-size: 30px;
+}
+
+
+
+
+.flex2 {
+
+    height: 5vh;
+
+    display: flex; 
+}
+
+.flex3 { /*パスワード*/
+
+    height: 5vh;
+    justify-content: center; 
+    align-items: center; 
+}
 
 
 

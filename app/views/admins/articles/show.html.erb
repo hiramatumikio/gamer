@@ -7,14 +7,14 @@
       <div class="col-md-9">
         <h1>記事管理詳細</h1>
           <div class="col-md-11 " style="background-color: white; margin: 0px 30px 10px; border-radius: 10px;">
-                <div><%= @article.title %></div>
+                <div class="size_test2"><%= @article.title %></div>
                 <div>
         <%= attachment_image_tag @article, :image, :fill, 1000, 1000, format: 'jpeg', size: '250x250' %>
         </div>
-                <div class= >特徴</div>
-                <div><%= @article.description %></div>
-                <div><%= link_to "編集", edit_admins_article_path(@article.id) %></div>
-                <div><%= link_to "削除", admins_article_path, method: :delete, data: {confirm: '本当に削除してもいいですか？'} %></div>
+                <div class="size_test2">特徴</div>
+                <div class="size_test2"><%= @article.description %></div>
+                <div class="size_test2"><%= link_to "編集", edit_admins_article_path(@article.id) %></div>
+                <div class="size_test2"><%= link_to "削除", admins_article_path, method: :delete, data: {confirm: '本当に削除してもいいですか？'} %></div>
           </div>
       </div>
     </div>

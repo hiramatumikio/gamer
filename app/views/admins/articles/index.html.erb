@@ -7,16 +7,16 @@
       <div class="col-md-9">
         <h1>記事管理一覧</h1>
           <div class="col-md-11 " style="background-color: white; margin: 0px 30px 10px; border-radius: 10px;">
-            <div><%= link_to "新規記事作成", new_admins_article_path %></div>
+            <div class="size_test2"><%= link_to "新規記事作成", new_admins_article_path %></div>
             <table>
               <thead class="thead thead-light">
                 <tr>
-                  <th>タイトル名</th>
+                  <th class="size_test2">タイトル名</th>
                   <th></th>
                 </tr>
               </thead>
               <% @articles.each do |article| %>
-              <tbody>
+              <tbody class="size_test2">
                 <td><%= article.title %></td>
                 <td><%= link_to "詳細", admins_article_path(article.id) %></td>
               </tbody>

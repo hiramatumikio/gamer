@@ -3,7 +3,7 @@
     <%= render 'admins/users/sidebar' %>
   </div>
     <h1>ユーザー管理一覧</h1>
-      <h3 class="pull-right">表示数1~10件</h3>
+      <h3 class="pull-right">表示数1~12件</h3>
 
 		   <script type="text/javascript">
                $(function() {
@@ -28,3 +28,7 @@
                <% end %>
             </table>
 		</div>
+
+		<div class="pagiWrapper">
+            <%= paginate @users %>
+        </div>
